@@ -40,15 +40,15 @@ while True:
         # To detect faces of the people
         person_name = compare_functions.compare_images('images/test.jpeg')
         # To check if the face and emotion of the person  is the same
-        if (last_person == person_name):
+        if last_person == person_name and person_name != 'Unknown':
             # Used to count the same person
             count_same_person += 1
         else:
             count_same_person = 0
         print(count_same_person)
-        if (last_person != person_name or last_emotion != current_emotion):
+        if last_person != person_name or last_emotion != current_emotion:
             # If the face and emotion changes, it will send it to owner via Telegram
-            if(count_same_person<=5):
+            if count_same_person<=5:
                 telegram_messenger.send_emotion_and_person_on_door(person_name, current_emotion)
                 telegram_messenger.send_image('images/test.jpeg')
             # To save the person's last known face and emotion
