@@ -1,4 +1,4 @@
-# quantum5
+# quantum Ai
 # Smart Doorbell using OpenCV
 
 Basic functions of the product: This is doorbell that will recognize the person's face and emotion and save the picture of the person. After that it will send the picture of the person and the name and emotion via telegram to the owner of the house.
